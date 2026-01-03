@@ -1,0 +1,51 @@
+{
+    "title": "Carta di Approccio Orione - Esempio Completo",
+    "subtitle": "Con costellazioni, confini, nomi, Flamsteed e SAO",
+    
+    "centerRA": 85.0,
+    "centerDec": 0.0,
+    
+    "fieldRadius": 20.0,
+    
+    "width": 1920,
+    "height": 1920,
+    "pngDensity": 300,
+    
+    "maxMagnitude": 10.0,
+    
+    "projection": "stereographic",
+    
+    "showGrid": true,
+    "gridInterval": 5.0,
+    
+    "showStarLabels": true,
+    "labelMagnitudeLimit": 4.0,
+    
+    "showSAONumbers": true,
+    "saoMagnitudeLimit": 8.0,
+    
+    "showConstellationLines": true,
+    "showConstellationBoundaries": true,
+    "showConstellationNames": true,
+    
+    "backgroundColor": "#000000",
+    "starColor": "#ffffff",
+    "gridColor": "#404040",
+    "constellationLineColor": "#306030",
+    "constellationBoundaryColor": "#603030",
+    "constellationNameColor": "#808080",
+    
+    "starSizeMultiplier": 1.2,
+    "minStarSize": 0.8,
+    "maxStarSize": 8.0,
+    
+    "northUp": true,
+    "eastLeft": true,
+    
+    "showBorder": true,
+    "showTitle": true,
+    "showCompass": true,
+    "showScale": true,
+    
+    "outputPath": "approccio_orione_completo.png"
+}

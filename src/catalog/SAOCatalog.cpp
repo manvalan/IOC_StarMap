@@ -181,7 +181,17 @@ bool SAOCatalog::loadLocalCatalog(const std::string& catalogPath) {
     
     // Per ora ritorna false
     return false;
-}RIORITÀ 1: Prova con database locale usando Gaia ID
+}
+
+bool SAOCatalog::enrichWithSAO(std::shared_ptr<core::Star> star) {
+    if (!star) return false;
+    
+    // Se già ha un numero SAO, non fare nulla
+    if (star->getSAONumber().has_value()) {
+        return true;
+    }
+    
+    // PRIORITÀ 1: Prova con database locale usando Gaia ID
     if (localDatabase_->isAvailable() && star->getGaiaId() > 0) {
         auto sao = localDatabase_->findSAOByGaiaId(star->getGaiaId());
         if (sao.has_value()) {
@@ -226,17 +236,7 @@ std::string SAOCatalog::getDatabaseStatistics() const {
     if (!localDatabase_) {
         return "Local database not initialized";
     }
-    return localDatabase_->getStatistics()
-    }
-    
-    // Altrimenti prova con coordinate
-    auto sao = crossMatchVizieR(star->getCoordinates(), 5.0);
-    if (sao.has_value()) {
-        star->setSAONumber(sao.value());
-        return true;
-    }
-    
-    return false;
+    return localDatabase_->getStatistics();
 }
 
 } // namespace catalog

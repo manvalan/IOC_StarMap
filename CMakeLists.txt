@@ -64,9 +64,10 @@ set(STARMAP_HEADERS
     include/starmap/core/CelestialObject.h
     include/starmap/catalog/GaiaClient.h
     include/starmap/catalog/SAOCatalog.h
+    include/starmap/catalog/CatalogManager.h
     include/starmap/catalog/GaiaSAODatabase.h
     include/starmap/map/MapConfiguration.h
-    include/starmap/map/Projectionh
+    include/starmap/map/Projection.h
     include/starmap/map/MapRenderer.h
     include/starmap/map/GridRenderer.h
     include/starmap/map/ChartGenerator.h

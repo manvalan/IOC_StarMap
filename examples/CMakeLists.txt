@@ -67,6 +67,15 @@ else()
     target_link_libraries(test_sao_database PRIVATE "/opt/homebrew/opt/libomp/lib/libomp.dylib")
 endif()
 
+# Test carta di approccio completa
+add_executable(approach_full_test approach_full_test.cpp)
+target_link_libraries(approach_full_test PRIVATE starmap)
+if(OpenMP_CXX_FOUND)
+    target_link_libraries(approach_full_test PRIVATE OpenMP::OpenMP_CXX)
+else()
+    target_link_libraries(approach_full_test PRIVATE "/opt/homebrew/opt/libomp/lib/libomp.dylib")
+endif()
+
 # Installa esempi
 install(TARGETS 
     example_basic 
@@ -76,6 +85,7 @@ install(TARGETS
     generate_chart
     occultation_chart
     test_sao_database
+    approach_full_test
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}/examples
 )
 

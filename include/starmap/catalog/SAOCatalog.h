@@ -69,6 +69,10 @@ public:
     /**
      * @brief Arricchisce una stella GAIA con il numero SAO
      * @param star Puntatore a stella da arricchire
+     * @return true se numero SAO trovato e aggiunto
+     */
+    bool enrichWithSAO(std::shared_ptr<core::Star> star);
+
     /**
      * @brief Verifica se database locale è disponibile
      * @return true se database locale può essere usato
@@ -84,11 +88,7 @@ public:
 private:
     class Impl;
     std::unique_ptr<Impl> pImpl_;
-    std::unique_ptr<GaiaSAODatabase> localDatabasered_ptr<core::Star> star);
-
-private:
-    class Impl;
-    std::unique_ptr<Impl> pImpl_;
+    std::unique_ptr<GaiaSAODatabase> localDatabase_;
 };
 
 /**
